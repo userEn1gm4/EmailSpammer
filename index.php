@@ -40,8 +40,6 @@
                   </div>
           
 
-
-
                     <div class="form-group col-md-5">
                       <label id="letras" class="col-form-label" >Lista de correos:</label>
                       <input  class="col-form-label" name="fper" size="30" type="file"/>
@@ -97,11 +95,7 @@ else
 
 	    $cap = $_FILES['fper']['name'];
 		$de=$_POST['nombre'];	
-
-
-		$dir ='listas/';
-
-
+		$dir ='';
 		if($cap == !null) {
 		    $trozo1=explode(".", $_FILES['fper']['name']);
 		   if ($trozo1['1']=="txt"  ){ 
@@ -113,8 +107,8 @@ else
 		$Asunto = $_POST['asunto'];
 		$mensaje = $_POST['area2'];
 		$cabeceras = 'MIME-Version: 1.0' . "\r\n";
-$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$cabeceras .= 'From: '.$de."\r\n";
+		$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+		$cabeceras .= 'From: '.$de."\r\n";
 
 
 		$correos = file($dir.$nuevonombre);
@@ -129,7 +123,7 @@ $cabeceras .= 'From: '.$de."\r\n";
 	}
 
 
-?>						<div class="container">
+?>			<div class="container">
 
                       <div class="alert alert-success" role="alert">Correos enviados con exito!</div>
 
